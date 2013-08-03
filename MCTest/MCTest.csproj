@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6878456B-C806-4DB2-9AD8-127B6A8D69C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCTest</RootNamespace>
+    <AssemblyName>MCTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authenticator.cs" />
+    <Compile Include="Cryptography\AesStream.cs" />
+    <Compile Include="Cryptography\AsnKeyParser.cs" />
+    <Compile Include="Cryptography\BigInteger.cs" />
+    <Compile Include="Cryptography\JavaHex.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="MCClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\Packets\MCSettings.cs" />
+    <Compile Include="Protocol\MCProtocol.cs" />
+    <Compile Include="Protocol\MCStream.cs" />
+    <Compile Include="Protocol\Packets\Client Packets\PHandshake.cs" />
+    <Compile Include="Protocol\Packets\Client Packets\PPlayer.cs" />
+    <Compile Include="Protocol\Packets\Client Packets\PReady.cs" />
+    <Compile Include="Protocol\Packets\MCPacket.cs" />
+    <Compile Include="Protocol\Packets\Server Packets\PEnc_Req.cs" />
+    <Compile Include="Protocol\Packets\Server Packets\PLogin.cs" />
+    <Compile Include="Protocol\Packets\Server Packets\PSpawnPosition.cs" />
+    <Compile Include="Protocol\Packets\Shared Packets\PChat.cs" />
+    <Compile Include="Protocol\Packets\Shared Packets\PDisconnect.cs" />
+    <Compile Include="Protocol\Packets\Shared Packets\PEnc_Resp.cs" />
+    <Compile Include="Protocol\Packets\Shared Packets\PKeepAlive.cs" />
+    <Compile Include="Protocol\Packets\Shared Packets\PPlayerPosition.cs" />
+    <Compile Include="Protocol\Packets\Shared Packets\PUnknown.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\GitHub\uNet\uNet\uNet.csproj">
+      <Project>{edefe544-9623-4704-a0ef-cc2926d81642}</Project>
+      <Name>uNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
