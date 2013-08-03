@@ -66,7 +66,7 @@
     <Compile Include="Protocol\Packets\Shared Packets\PUnknown.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\GitHub\uNet\uNet\uNet.csproj">
+    <ProjectReference Include="..\uNet\uNet.csproj">
       <Project>{edefe544-9623-4704-a0ef-cc2926d81642}</Project>
       <Name>uNet</Name>
     </ProjectReference>
